@@ -8,6 +8,8 @@ services:
       POSTGRES_DB: $POSTGRES_DB
     volumes:
       - ./db_data:/var/lib/postgresql/data
+    networks:
+      - external_network
 
   backend:
     container_name: food_manager_server
