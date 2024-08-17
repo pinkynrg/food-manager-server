@@ -6,17 +6,23 @@ services:
       POSTGRES_USER: $POSTGRES_USER
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
       POSTGRES_DB: $POSTGRES_DB
+    ports:
+      - "5432:5432"
     volumes:
       - ./db_data:/var/lib/postgresql/data
 
   backend:
     container_name: food_manager_server
-    image: pinkynrg/food_manager_backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
     environment:
       POSTGRES_HOST: db
       POSTGRES_USER: $POSTGRES_USER
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
       POSTGRES_DB: $POSTGRES_DB
     restart: always
+    volumes:
+      - .:/app
     ports:
       - "3000:5000"

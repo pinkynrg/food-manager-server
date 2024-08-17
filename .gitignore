@@ -93,3 +93,6 @@ desktop.ini
 # Environment variables
 .env
 .env.*
+
+# PosgreSQL data folder 
+db_data
