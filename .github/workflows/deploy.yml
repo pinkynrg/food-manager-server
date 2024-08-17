@@ -58,4 +58,4 @@ jobs:
             cd ${{ github.event.repository.name }}
             docker compose down 
             docker compose pull
-            POSTGRES_USER=${{ secrets.POSTGRES_USER }} && POSTGRES_USER=${{ secrets.POSTGRES_PASSWORD }} && POSTGRES_DB=${{ secrets.POSTGRES_DB }} && docker compose up -d
+            POSTGRES_USER=${{ secrets.POSTGRES_USER }} POSTGRES_USER=${{ secrets.POSTGRES_PASSWORD }} POSTGRES_DB=${{ secrets.POSTGRES_DB }} docker compose up -d
