@@ -27,7 +27,6 @@ share/python-wheels/
 MANIFEST
 
 # Poetry specific
-poetry.lock
 .poetry/
 .cache/
 .pdm.toml
